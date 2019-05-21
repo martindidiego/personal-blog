@@ -1,0 +1,140 @@
+.animated {
+  animation-timing-function: cubic-bezier(1, 0.01, 0.425, 0.77);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transform: translateZ(0);
+}
+.animated-wrapper {
+  overflow: hidden;
+}
+@keyframes a {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+.fadeInUp {
+  animation-name: a;
+}
+@keyframes b {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation-name: b;
+}
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  padding-top: 30px;
+  font-family: Source Sans Pro, -apple-system, Helvetica, Avenir Next,
+    sans-serif;
+  color: #383838;
+  background-color: #fbfbfb;
+  max-width: 740px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+}
+h1 {
+  font-weight: 100;
+}
+h2 {
+  margin-bottom: 0;
+}
+section {
+  margin-bottom: 40px;
+}
+section .item {
+  margin-bottom: 15px;
+}
+section .item-title {
+  margin-bottom: 8px;
+}
+section .item-subtitle {
+  color: #4a4a4a;
+  display: block;
+}
+section .item p {
+  margin-top: 10px;
+}
+section .item .position {
+  margin-bottom: 8px;
+}
+p {
+  color: #7d7d7d;
+}
+a {
+  color: #1873bb;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+ul li {
+  margin-bottom: 10px;
+}
+#app {
+  height: auto;
+  padding: 25px;
+}
+.bio-avatar {
+  background-color: #ececec;
+  background-position: 50%;
+  background-size: cover;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .bio-avatar {
+    height: 65px;
+    width: 65px;
+  }
+}
+.bio-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 45px;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.bio-details {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+@media (max-width: 767px) {
+  .bio-details {
+    font-size: smaller;
+  }
+}
+.bio-details h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bio-details-subtitle {
+  color: #7d7d7d;
+  display: block;
+}
