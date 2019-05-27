@@ -1,9 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-// Queries.
-import { qHome } from "./home.query"
-
 // Components.
 import { Bio } from "../components/Bio/Bio"
 import Layout from "../components/layout"
