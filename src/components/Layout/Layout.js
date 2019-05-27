@@ -11,6 +11,9 @@ export const Layout = props => {
   const { location, title, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
 
+  /**
+   * Only show header on non-root pages.
+   */
   const header =
     location.pathname === rootPath ? null : (
       <h3
@@ -31,6 +34,7 @@ export const Layout = props => {
         </Link>
       </h3>
     )
+
   return (
     <Heading>
       <div>
@@ -38,11 +42,6 @@ export const Layout = props => {
         <Bio />
       </div>
       <main>{children}</main>
-      {/* <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer> */}
     </Heading>
   )
 }
