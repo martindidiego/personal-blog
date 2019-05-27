@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby"
 import { Layout, Helmet } from "../components"
 
 // Styles.
+import { Excerpt, PostTitle } from "./home.style"
 import { GlobalStyles } from "../utils/styles"
 
 /**
@@ -53,19 +54,17 @@ const BlogIndex = props => {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
+            <Excerpt key={node.fields.slug}>
+              <PostTitle>
+                <Link to={node.fields.slug}>{title}</Link>
+              </PostTitle>
               <small>{node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
-            </div>
+            </Excerpt>
           )
         })}
       </Layout>
