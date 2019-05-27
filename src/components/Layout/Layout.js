@@ -6,25 +6,25 @@ import { Bio } from "../"
 
 // Styles.
 import { GlobalStyles } from "../../utils/styles"
-import { Heading } from "./Layout.style"
+import { Heading, BioWrapper } from "./Layout.style"
 
 export const Layout = props => {
   const { location, title, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
 
   /**
-   * Only show home link on non-root pages.
+   * Determine if user is in root path.
    */
-  const showHomeLink = location.pathname !== rootPath
+  const atRoot = location.pathname === rootPath
 
   return (
     <>
       <GlobalStyles />
-      <Heading>
-        <div>
-          <Bio />
-          {showHomeLink && <Link to={"/"}>&larr; Home</Link>}
-        </div>
+      <Heading help={true} flat={!atRoot}>
+        <BioWrapper>
+          <Bio atRoot={atRoot} />
+          {!atRoot && <Link to={"/"}>&larr; All Posts</Link>}
+        </BioWrapper>
         <main>{children}</main>
       </Heading>
     </>

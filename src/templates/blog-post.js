@@ -5,6 +5,9 @@ import { Link, graphql } from "gatsby"
 // Components.
 import { Layout, Bio, Helmet } from "../components/"
 
+// Utils.
+import { colors } from "../utils/styles"
+
 /**
  * Query for site metadata and post data.
  */
@@ -53,6 +56,16 @@ const PostContent = styled.div`
   padding: 15px 0px;
   border-top: 1px solid rgba(187, 187, 187, 0.58);
   border-bottom: 1px solid rgba(187, 187, 187, 0.58);
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 15px;
+  }
+  p {
+    color: ${colors.text.primary};
+  }
 `
 
 /**

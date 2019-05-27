@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    padding: 25px;
     padding-top: 30px;
     font-family: Source Sans Pro, -apple-system, Helvetica, Avenir Next,
       sans-serif;
@@ -37,10 +38,6 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-weight: 100;
-  }
-
-  h2 {
-    margin-bottom: 0;
   }
 
   p {

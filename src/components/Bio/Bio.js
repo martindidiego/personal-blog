@@ -32,7 +32,7 @@ export const qBiography = graphql`
  *
  * Includes avatar, name, and social links.
  */
-export const Bio = () => {
+export const Bio = ({ atRoot }) => {
   return (
     <StaticQuery
       query={qBiography}
@@ -47,17 +47,19 @@ export const Bio = () => {
                 <About>Code + Design</About>
               </div>
             </Profile>
-            <p>
+            <p className="animated fadeInUp">
               Hey, I'm Martin 👋🏻. I’m a software engineer living in Miami, FL.
             </p>
 
-            <p>
-              Check out{" "}
-              <a href="https://martindidiego.com/" title="My website">
-                my site
-              </a>
-              .
-            </p>
+            {atRoot && (
+              <p className="animated fadeInUp">
+                Check out{" "}
+                <a href="https://martindidiego.com/" title="My website">
+                  my site
+                </a>
+                .
+              </p>
+            )}
           </Wrapper>
         )
       }}
