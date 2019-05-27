@@ -1,6 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+// Queries.
+import { qHome } from "./home.query"
+
 // Components.
 import { Bio } from "../components/Bio/Bio"
 import Layout from "../components/layout"
@@ -12,44 +15,45 @@ import { GlobalStyles } from "../utils/styles"
 // Utils.
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+/**
+ * Blog entry point (root) component.
+ */
+const BlogIndex = props => {
+  const { data } = props
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMarkdownRemark.edges
 
-    return (
-      <>
-        <GlobalStyles />
-        <Layout location={this.props.location} title={siteTitle}>
-          <SEO title="All posts" />
-          <Bio />
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </div>
-            )
-          })}
-        </Layout>
-      </>
-    )
-  }
+  return (
+    <>
+      <GlobalStyles />
+      <Layout location={props.location} title={siteTitle}>
+        <SEO title="All posts" />
+        <Bio />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div key={node.fields.slug}>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
+              >
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </h3>
+              <small>{node.frontmatter.date}</small>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+            </div>
+          )
+        })}
+      </Layout>
+    </>
+  )
 }
 
 export default BlogIndex
