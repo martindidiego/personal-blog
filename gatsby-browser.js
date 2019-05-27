@@ -1,3 +1,2 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+// Custom typefaces.
+import "typeface-source-sans-pro"
