@@ -1,11 +1,31 @@
 import React from "react"
-import { StaticQuery } from "gatsby"
-
-// Queries.
-import { qBiography } from "./Bio.query.js"
+import { StaticQuery, graphql } from "gatsby"
 
 // Styles.
 import { Avatar } from "./Bio.style"
+
+/**
+ * Query for biography content.
+ */
+export const qBiography = graphql`
+  query BioQuery {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        author
+        social {
+          twitter
+        }
+      }
+    }
+  }
+`
 
 /**
  * Biography component.
