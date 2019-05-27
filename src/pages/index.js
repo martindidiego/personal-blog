@@ -6,7 +6,6 @@ import { Layout, Helmet } from "../components"
 
 // Styles.
 import { Excerpt, PostTitle } from "./home.style"
-import { GlobalStyles } from "../utils/styles"
 
 /**
  * Query for site metadata and post excerpts.
@@ -46,7 +45,6 @@ const BlogIndex = props => {
 
   return (
     <>
-      <GlobalStyles />
       <Layout location={props.location} title={siteTitle}>
         <Helmet title="All posts" />
 

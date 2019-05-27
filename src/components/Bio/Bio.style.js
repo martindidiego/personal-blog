@@ -11,6 +11,7 @@ import { colors, centerChildrenHorizontally } from "../../utils/styles"
  */
 export const Wrapper = styled.div`
   margin-right: 50px;
+  min-width: 250px;
 `
 
 /**

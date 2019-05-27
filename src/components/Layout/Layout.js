@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { Bio } from "../"
 
 // Styles.
+import { GlobalStyles } from "../../utils/styles"
 import { Heading } from "./Layout.style"
 
 export const Layout = props => {
@@ -12,36 +13,20 @@ export const Layout = props => {
   const rootPath = `${__PATH_PREFIX__}/`
 
   /**
-   * Only show header on non-root pages.
+   * Only show home link on non-root pages.
    */
-  const header =
-    location.pathname === rootPath ? null : (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
+  const showHomeLink = location.pathname !== rootPath
 
   return (
-    <Heading>
-      <div>
-        <header>{header}</header>
-        <Bio />
-      </div>
-      <main>{children}</main>
-    </Heading>
+    <>
+      <GlobalStyles />
+      <Heading>
+        <div>
+          <Bio />
+          {showHomeLink && <Link to={"/"}>&larr; Home</Link>}
+        </div>
+        <main>{children}</main>
+      </Heading>
+    </>
   )
 }
