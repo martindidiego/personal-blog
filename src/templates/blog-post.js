@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 
 // Components.
@@ -29,6 +30,44 @@ export const pageQuery = graphql`
 `
 
 /**
+ * Post title.
+ */
+const PostTitle = styled.h1`
+  font-weight: normal;
+  margin-bottom: 10px;
+`
+
+/**
+ * Post date.
+ */
+const PostDate = styled.small`
+  margin-bottom: 15px;
+  display: block;
+`
+
+/**
+ * Post content.
+ */
+const PostContent = styled.div`
+  margin: 15px 0px;
+  padding: 15px 0px;
+  border-top: 1px solid rgba(187, 187, 187, 0.58);
+  border-bottom: 1px solid rgba(187, 187, 187, 0.58);
+`
+
+/**
+ * Pagination list.
+ */
+const PaginationList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`
+
+/**
  * Template component for blog post.
  */
 export const BlogPostTemplate = props => {
@@ -42,20 +81,12 @@ export const BlogPostTemplate = props => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <hr />
+      <PostTitle>{post.frontmatter.title}</PostTitle>
+      <PostDate>{post.frontmatter.date}</PostDate>
+      <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
 
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
+      {/* Pagination */}
+      <PaginationList>
         <li>
           {previous && (
             <Link to={previous.fields.slug} rel="prev">
@@ -70,7 +101,7 @@ export const BlogPostTemplate = props => {
             </Link>
           )}
         </li>
-      </ul>
+      </PaginationList>
     </Layout>
   )
 }

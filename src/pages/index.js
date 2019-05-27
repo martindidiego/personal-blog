@@ -1,11 +1,9 @@
 import React from "react"
+import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 
 // Components.
 import { Layout, Helmet } from "../components"
-
-// Styles.
-import { Excerpt, PostTitle } from "./home.style"
 
 /**
  * Query for site metadata and post excerpts.
@@ -33,6 +31,21 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+/**
+ * Blog post title.
+ */
+const PostTitle = styled.h3`
+  margin-bottom: 5px;
+  font-weight: normal;
+`
+
+/**
+ * Wrapper for post excerpt.
+ */
+const Excerpt = styled.div`
+  margin-bottom: 40px;
 `
 
 /**

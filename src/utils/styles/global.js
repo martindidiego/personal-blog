@@ -25,6 +25,10 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
 
+  main {
+    padding-bottom: 80px;
+  }
+
   @media (min-width: 768px) {
     body {
       padding-top: 105px;
