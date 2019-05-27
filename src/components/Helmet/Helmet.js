@@ -1,10 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Helmet as ReactHelmet } from "react-helmet"
 
-// Queries.
-import { qSiteMetadata } from "./Helmet.query"
+/**
+ * Queries site metadata.
+ */
+const qSiteMetadata = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`
 
 /**
  * Helmet for application.
