@@ -2,13 +2,41 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 // Components.
-import { Layout, Bio, Helmet } from "../components/Bio/Bio"
+import { Layout, Bio, Helmet } from "../components"
 
 // Styles.
 import { GlobalStyles } from "../utils/styles"
 
 // Utils.
 import { rhythm } from "../utils/typography"
+
+/**
+ * Query for site metadata and post excerpts.
+ */
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
 
 /**
  * Blog entry point (root) component.
@@ -24,6 +52,8 @@ const BlogIndex = props => {
       <Layout location={props.location} title={siteTitle}>
         <Helmet title="All posts" />
         <Bio />
+
+        {/* Posts */}
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -52,28 +82,3 @@ const BlogIndex = props => {
 }
 
 export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`

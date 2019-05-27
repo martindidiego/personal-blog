@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/Bio/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+// Components.
+import { Layout, Bio, Helmet } from "../components/"
+
+// Utils.
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
@@ -14,7 +15,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
+        <Helmet
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
