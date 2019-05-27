@@ -2,9 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 // Components.
-import { Bio } from "../components/Bio/Bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Layout, Bio, Helmet } from "../components/Bio/Bio"
 
 // Styles.
 import { GlobalStyles } from "../utils/styles"
@@ -24,7 +22,7 @@ const BlogIndex = props => {
     <>
       <GlobalStyles />
       <Layout location={props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <Helmet title="All posts" />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
