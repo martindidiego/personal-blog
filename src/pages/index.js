@@ -2,13 +2,10 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 // Components.
-import { Layout, Bio, Helmet } from "../components"
+import { Layout, Helmet } from "../components"
 
 // Styles.
 import { GlobalStyles } from "../utils/styles"
-
-// Utils.
-import { rhythm } from "../utils/typography"
 
 /**
  * Query for site metadata and post excerpts.
@@ -51,18 +48,13 @@ const BlogIndex = props => {
       <GlobalStyles />
       <Layout location={props.location} title={siteTitle}>
         <Helmet title="All posts" />
-        <Bio />
 
         {/* Posts */}
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>

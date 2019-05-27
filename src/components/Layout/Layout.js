@@ -1,36 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../../utils/typography"
+// Components.
+import { Bio } from "../"
 
-export const Layout = () => {
-  const { location, title, children } = this.props
+// Styles.
+import { Heading } from "./Layout.style"
+
+export const Layout = props => {
+  const { location, title, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
-  let header
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
+  const header =
+    location.pathname === rootPath ? null : (
       <h3
         style={{
           fontFamily: `Montserrat, sans-serif`,
@@ -49,23 +31,18 @@ export const Layout = () => {
         </Link>
       </h3>
     )
-  }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
+    <Heading>
+      <div>
+        <header>{header}</header>
+        <Bio />
+      </div>
       <main>{children}</main>
-      <footer>
+      {/* <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
+      </footer> */}
+    </Heading>
   )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 // Styles.
-import { Avatar } from "./Bio.style"
+import { Wrapper, Avatar, Name, About, Profile } from "./Bio.style"
 
 /**
  * Query for biography content.
@@ -39,17 +39,26 @@ export const Bio = () => {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <>
-            <Avatar fixed={data.avatar.childImageSharp.fixed} alt={author} />
+          <Wrapper>
+            <Profile>
+              <Avatar fixed={data.avatar.childImageSharp.fixed} alt={author} />
+              <div>
+                <Name>Martin Di Diego</Name>
+                <About>Code + Design</About>
+              </div>
+            </Profile>
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              Hey, I'm Martin 👋🏻. I’m a software engineer living in Miami, FL.
             </p>
-          </>
+
+            <p>
+              Check out{" "}
+              <a href="https://martindidiego.com/" title="My website">
+                my site
+              </a>
+              .
+            </p>
+          </Wrapper>
         )
       }}
     />

@@ -21,13 +21,13 @@ const GlobalStyles = createGlobalStyle`
       sans-serif;
     color: #383838;
     background-color: #fbfbfb;
-    max-width: 740px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
   @media (min-width: 768px) {
     body {
-      padding-top: 80px;
+      padding-top: 105px;
     }
   }
 
@@ -41,6 +41,7 @@ const GlobalStyles = createGlobalStyle`
 
   p {
     color: ${colors.text.secondary};
+    font-size: 15px;
   }
 
   a {
