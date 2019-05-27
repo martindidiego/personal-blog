@@ -11,7 +11,7 @@ import { colors, centerChildrenHorizontally } from "../../utils/styles"
  */
 export const Wrapper = styled.div`
   padding-right: 50px;
-  border-right: 1px solid #d4d4d4;
+  border-right: 1px solid rgba(212, 212, 212, 0.45);
   margin-right: 50px;
   padding-bottom: 100px;
 `
@@ -32,7 +32,7 @@ export const Avatar = styled(Image).attrs(props => ({
  */
 export const Name = styled.h1`
   font-weight: normal;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
 `
 export const About = styled.span`

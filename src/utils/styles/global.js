@@ -41,7 +41,6 @@ const GlobalStyles = createGlobalStyle`
 
   p {
     color: ${colors.text.secondary};
-    font-size: 15px;
   }
 
   a {
