@@ -10,10 +10,7 @@ import { colors, centerChildrenHorizontally } from "../../utils/styles"
  * Component wrapper.
  */
 export const Wrapper = styled.div`
-  padding-right: 50px;
-  border-right: 1px solid rgba(212, 212, 212, 0.45);
   margin-right: 50px;
-  padding-bottom: 100px;
 `
 
 /**
