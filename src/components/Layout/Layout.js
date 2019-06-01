@@ -9,7 +9,7 @@ import { GlobalStyles } from "../../utils/styles"
 import { Heading, BioWrapper } from "./Layout.style"
 
 export const Layout = props => {
-  const { location, title, children } = props
+  const { location, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
 
   /**
