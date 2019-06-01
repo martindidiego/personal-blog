@@ -1,5 +1,8 @@
 import { createGlobalStyle } from "styled-components"
 
+// Utils.
+import { media } from "./"
+
 const colors = {
   inline: {
     color: "#254ebf",
@@ -34,8 +37,12 @@ const CodeStyles = createGlobalStyle`
   /* Code blocks */
   .gatsby-highlight {
     background-color: ${colors.backgroundColor};
-    border-radius: 10px;
     margin-bottom: 1.85rem;
+    border-radius: 10px;
+    @media ${media.screenQueries.small} {
+      border-radius: 0px;
+      margin: auto -25px;
+    }
   }
   .gatsby-highlight pre[class*="language-"] {
     padding: 20px;
