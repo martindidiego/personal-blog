@@ -19,9 +19,6 @@ const qBiography = graphql`
     site {
       siteMetadata {
         author
-        social {
-          twitter
-        }
       }
     }
   }
@@ -29,8 +26,6 @@ const qBiography = graphql`
 
 /**
  * Biography component.
- *
- * Includes avatar, name, and social links.
  */
 export const Bio = ({ atRoot }) => {
   return (
