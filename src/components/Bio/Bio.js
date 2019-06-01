@@ -7,7 +7,7 @@ import { Wrapper, Avatar, Name, About, Profile } from "./Bio.style"
 /**
  * Query for biography content.
  */
-export const qBiography = graphql`
+const qBiography = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
