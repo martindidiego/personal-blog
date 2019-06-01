@@ -37,7 +37,7 @@ export const Bio = ({ atRoot }) => {
     <StaticQuery
       query={qBiography}
       render={data => {
-        const { author, social } = data.site.siteMetadata
+        const { author } = data.site.siteMetadata
         return (
           <Wrapper>
             <Profile>
@@ -48,7 +48,11 @@ export const Bio = ({ atRoot }) => {
               </div>
             </Profile>
             <p className="animated fadeInUp">
-              Hey, I'm Martin 👋🏻. I’m a software engineer living in Miami, FL.
+              Hey, I'm Martin{" "}
+              <span role="img" aria-label="Waving hand emoji">
+                👋🏻
+              </span>
+              . I’m a software engineer living in Miami, FL.
             </p>
 
             {atRoot && (
