@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet as ReactHelmet } from "react-helmet"
+import favicon from "../../assets/favicon.ico"
 
 /**
  * Queries site metadata.
@@ -34,6 +35,14 @@ export const Helmet = ({ description, lang, meta, title }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={[
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: `${favicon}`,
+        },
+      ]}
       meta={[
         {
           name: `description`,
