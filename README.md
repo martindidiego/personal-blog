@@ -4,10 +4,7 @@ This is my personal blog. It's built on [Gatsby](https://www.gatsbyjs.org/), [st
 
 ### Run locally
 
-To run locally, run `npm install` at the root. Next, run `npm start` which will do the following:
-
-- Start a local web server
-- Start a watcher for any `.js`, `.sass`, and `.html` files which will reload the browser automaticlly when triggered
+To run locally, run `npm install` at the root. Next, run `npm start` to start a local web server.
 
 ### Build for production
 
