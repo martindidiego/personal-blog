@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    -webkit-font-smoothing: antialiased;
     padding: 25px;
     padding-top: 30px;
     font-family: Source Sans Pro, -apple-system, Helvetica, Avenir Next,

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 
 // Components.
-import { Layout, Bio, Helmet } from "../components/"
+import { Layout, Helmet } from "../components/"
 
 // Utils.
 import { colors } from "../utils/styles"
@@ -53,7 +53,7 @@ const PostDate = styled.small`
  */
 const PostContent = styled.div`
   margin: 15px 0px;
-  padding: 15px 0px;
+  padding: 35px 0px;
   border-top: 1px solid rgba(187, 187, 187, 0.58);
   border-bottom: 1px solid rgba(187, 187, 187, 0.58);
   h2,
@@ -65,6 +65,9 @@ const PostContent = styled.div`
   }
   p {
     color: ${colors.text.primary};
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `
 
