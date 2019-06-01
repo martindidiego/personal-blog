@@ -38,10 +38,6 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  h1 {
-    font-weight: 100;
-  }
-
   p {
     color: ${colors.text.secondary};
   }
