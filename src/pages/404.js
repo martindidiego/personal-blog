@@ -1,25 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+// Components.
 import { Layout, Helmet } from "../components"
 
-class NotFoundPage extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Helmet title="404: Not Found" />
-        <h1>Not Found</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </Layout>
-    )
-  }
-}
-
-export default NotFoundPage
-
+/**
+ * Query for site metadata.
+ */
 export const pageQuery = graphql`
   query {
     site {
@@ -29,3 +16,21 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const NotFoundPage = props => {
+  const { data } = props
+  const siteTitle = data.site.siteMetadata.title
+
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <Helmet title="404: Not Found" />
+      <h1>404: Words Not Found</h1>
+      <p>
+        Not entirely sure how you ended up here, but you're either lost or the
+        content you're after is gone.
+      </p>
+    </Layout>
+  )
+}
+
+export default NotFoundPage
