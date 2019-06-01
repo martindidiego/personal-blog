@@ -1,0 +1,8 @@
+
+# Global context properties.
+[build]
+  base = "/"
+
+  publish = "/public/"
+  
+  command = "npm run build:site"
