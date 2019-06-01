@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
 
   main {
     padding-bottom: 80px;
+    min-width: 355px;
   }
 
   @media (min-width: 768px) {
