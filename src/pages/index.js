@@ -38,7 +38,7 @@ export const pageQuery = graphql`
  */
 const PostTitle = styled.h3`
   margin-bottom: 5px;
-  font-weight: normal;
+  font-weight: bold;
 `
 
 /**

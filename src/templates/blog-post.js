@@ -36,7 +36,7 @@ export const pageQuery = graphql`
  * Post title.
  */
 const PostTitle = styled.h1`
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 10px;
 `
 
@@ -61,7 +61,7 @@ const PostContent = styled.div`
   h4,
   h5,
   h6 {
-    margin-bottom: 15px;
+    margin-top: 3rem;
   }
   p {
     color: ${colors.text.primary};
