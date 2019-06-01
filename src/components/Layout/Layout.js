@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { Bio } from "../"
 
 // Styles.
-import { GlobalStyles } from "../../utils/styles"
+import { GlobalStyles, CodeStyles } from "../../utils/styles"
 import { Heading, BioWrapper } from "./Layout.style"
 
 export const Layout = props => {
@@ -20,6 +20,7 @@ export const Layout = props => {
   return (
     <>
       <GlobalStyles />
+      <CodeStyles />
       <Heading help={true} flat={!atRoot}>
         <BioWrapper>
           <Bio atRoot={atRoot} />

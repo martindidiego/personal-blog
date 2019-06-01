@@ -1,4 +1,5 @@
 export { default as colors } from "./colors"
-export { default as GlobalStyles } from "./global"
 export { default as media } from "./media"
+export { default as CodeStyles } from "./code"
+export { default as GlobalStyles } from "./global"
 export * from "./helpers"

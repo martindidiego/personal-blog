@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
       sans-serif;
     color: #383838;
     background-color: #fbfbfb;
-    max-width: 900px;
+    max-width: 44rem;
     margin: 0 auto;
   }
 
