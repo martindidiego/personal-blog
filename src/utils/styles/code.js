@@ -41,7 +41,7 @@ const CodeStyles = createGlobalStyle`
     border-radius: 10px;
     @media ${media.screenQueries.small} {
       border-radius: 0px;
-      margin: auto -25px;
+      margin: 1.85rem -25px;
     }
   }
   .gatsby-highlight pre[class*="language-"] {
