@@ -238,6 +238,7 @@ Using the custom Hook would require a minimal change:
 import { useTabs } from "./Tabs";
 
 export const Tab: React.FC<ITabProps> = props => {
+  /* highlight-next-line */
   const { setActiveTab } = useTabs();
   return (
     <div className="tab">
