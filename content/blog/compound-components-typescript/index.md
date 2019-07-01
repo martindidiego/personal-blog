@@ -1,6 +1,7 @@
 ---
 title: Compound React Components with Hooks + TypeScript
 date: "2019-07-01"
+description: "Let's write some Compound Components in TypeScript... with Hooks!"
 ---
 
 When writing React components, it always pays off to spend a little bit of time thinking about how another developer would use them.
