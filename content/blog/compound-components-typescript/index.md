@@ -232,6 +232,22 @@ export const useTabs = (): ITabsContext => {
 
 This Hook would throw if any consumer of it is not in the context of the `<TabsContext.Provider>` component since the context value would be `null`.
 
+Using the custom Hook would require a minimal change:
+
+```tsx
+import { useTabs } from "./Tabs";
+
+export const Tab: React.FC<ITabProps> = props => {
+  const { setActiveTab } = useTabs();
+  return (
+    <div className="tab">
+      <button onClick={() => setActiveTab(props.label)}>
+        {props.children}
+      </button>
+    </div>
+  )
+```
+
 Additionally, in this Hook you can take the context value and create some more abstracted functions which are then returned. For instance:
 
 ```tsx
@@ -303,4 +319,4 @@ If you're interested in diving deeper in Compound Components, check these links 
 
 - [Quick guide to React compound components](https://blog.logrocket.com/guide-to-react-compound-components-9c4b3eb482e9/)
 - [React Hooks: Compound Components](https://kentcdodds.com/blog/compound-components-with-react-hooks)
-- [Compound Components in React Using the Context API](https://css-tricks.com/compound-components-in-react-using-the-context-api/)
+- [Compound Components in React Using the Context API](https://css-tricks.com/compound-components-in-react-using-the-context-api/)**‌**
