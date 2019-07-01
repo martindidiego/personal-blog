@@ -48,7 +48,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ul {
-    list-style-type: none;
     padding-left: 0;
   }
 
