@@ -1,6 +1,6 @@
 # My personal blog
 
-This is my personal blog. It's built on [Gatsby](https://www.gatsbyjs.org/), [stlyed-components](https://www.styled-components.com/), and [GraphQL](https://graphql.org/) 🚀.
+This is my personal blog. It's built on [Gatsby](https://www.gatsbyjs.org/), [styled-components](https://www.styled-components.com/), and [GraphQL](https://graphql.org/) 🚀.
 
 ### Run locally
 
