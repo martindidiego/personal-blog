@@ -66,6 +66,12 @@ const CodeStyles = createGlobalStyle`
     margin: 0 -20px;
     padding: 0 12px;
   }
+
+  /* Images */
+  .gatsby-resp-image-wrapper {
+    margin: 25px 0;
+    max-width: 100% !important;
+  }
 `
 
 export default CodeStyles

@@ -53,6 +53,13 @@ const GlobalStyles = createGlobalStyle`
   ul li {
     margin-bottom: 10px;
   }
+
+  blockquote {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    font-size: 20px;
+  }
 `
 
 export default GlobalStyles
