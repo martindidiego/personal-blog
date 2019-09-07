@@ -276,7 +276,7 @@ The dot-notation should imply here that these components are "more connected" th
 
 ## Applications to Design Systems
 
-I believe that this pattern shines the brightest in the context (pun intended) of a design system. One of the core principles authors of such systems follow is to generally prefer longevity of the system. When a system is too confined to a particular usage, it suffers from narrow scoping and may not be suitable as edge cases are discovered. In order to achieve longevity, one approach taken is to favor providing abstract components that prioritize composability over specific usage to target the middle-ground between restrictiveness and experimentation.
+I believe that this pattern shines the brightest in the context (pun intended) of a design system. One of the core principles that authors of such systems follow is to generally prefer longevity of the system. When a system is too confined to a particular usage, it suffers from narrow scoping and may not be suitable as edge cases are discovered. In order to achieve longevity, one approach taken is to favor providing abstract components that prioritize composability over specific usage to target the middle-ground between restrictiveness and experimentation.
 
 Similar to how design systems provide primitive atomic elements to compose functionality out of, Compound Components provide their internal elements and handle their communication for you.
 
