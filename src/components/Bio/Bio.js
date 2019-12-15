@@ -47,7 +47,7 @@ export const Bio = ({ atRoot }) => {
               <span role="img" aria-label="Waving hand emoji">
                 👋🏻
               </span>
-              . I’m a software engineer living in Miami, FL.
+              . I’m a software engineer living in Austin, TX.
             </p>
 
             {atRoot && (
