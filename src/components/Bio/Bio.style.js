@@ -18,8 +18,8 @@ export const Wrapper = styled.div`
  * Avatar.
  */
 export const Avatar = styled(Image).attrs(props => ({
-  fixed: props => props.fixed,
-  alt: props => props.alt,
+  fixed: props.fixed,
+  alt: props.alt,
 }))`
   border-radius: 50%;
   margin-right: 10px;
