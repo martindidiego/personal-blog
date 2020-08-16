@@ -274,43 +274,7 @@ You might be wondering what's so special about using components this way -- afte
 
 The dot-notation should imply here that these components are "more connected" than simply putting individual components together.
 
-## Applications to Design Systems
-
-I believe that this pattern shines the brightest in the context (pun intended) of a design system. One of the core principles that authors of such systems follow is to generally prefer longevity of the system. When a system is too confined to a particular usage, it suffers from narrow scoping and may not be suitable as edge cases are discovered. In order to achieve longevity, one approach taken is to favor providing abstract components that prioritize composability over specific usage to target the middle-ground between restrictiveness and experimentation.
-
-Similar to how design systems provide primitive atomic elements to compose functionality out of, Compound Components provide their internal elements and handle their communication for you.
-
-To visualize an example, let's take a look at the [Material-UI Tabs](https://material-ui.com/components/tabs/) component.
-
-```tsx
-export default function SimpleTabs() {
-  const classes = useStyles()
-  const [value, setValue] = React.useState(0)
-
-  function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
-    setValue(newValue)
-  }
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange}>
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
-        </Tabs>
-      </AppBar>
-      {value === 0 && <TabContainer>Item One</TabContainer>}
-      {value === 1 && <TabContainer>Item Two</TabContainer>}
-      {value === 2 && <TabContainer>Item Three</TabContainer>}
-    </div>
-  )
-}
-```
-
-While it may be wise to defer this kind of state management to the consumer, I think it's leaning too far away from a restrictiveness point of view. Almost any tab implementation will look identical to the example provided and is a missed opportunity to be abstracted away from the consumer. Now there will be thousands of slightly different implementations of the same core logic. Let's take this down a notch and apply this to a smaller set of teams rather than Material-UI's audience (the entire world): a developer shipping `<Tabs>` in one project has to learn about how state is managed for `<Tabs>` in another project. Apply this same issue for tens or hundreds of other components that all do the same thing and the developer spends more time fixing the same problem rather than delivering value.
-
-A quick dive into [the source code of `<Tabs>`](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Tabs/Tabs.js#L81-L90) reveals that this component does not maintain state between `<Tab>` or `<TabContainer>`. It is up to the consumer to compose the tab functionality _and_ maintain state.
+---
 
 I hope you can add this paradigm into your toolbox of UI development!
 
